@@ -32,14 +32,11 @@ span{
     margin-top: 150px;
 }
 button{
-    
-    
     line-height: 60px;
     font-weight: bold;
     padding: -20px;
     background: salmon;
     border: none;
-
 }
 #buttons p{
    text-align: center;
@@ -47,4 +44,7 @@ button{
 }
 button:hover{
     background: lightsalmon;
+}
+#difficulty p{
+    text-align: center;
 }

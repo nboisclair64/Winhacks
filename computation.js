@@ -1,6 +1,8 @@
 
 async function startGame() {
     document.getElementById("btn1").remove();
+    document.getElementById("Words5").remove();
+    document.getElementById("Words10").remove();
     var start = Date.now();
     var time_spent;
     //var word = "Hello my name is Nick";
@@ -67,6 +69,29 @@ percent2 = percent * 100;
     return 0;
     
 }
+var gamelength = 10;
+
+//saves html button5 as a js variable
+const button5 = document.querySelector('Words5');
+
+//assigns logic to button
+button5.addEventListener('click', easyDifficulty);
+
+function easyDifficulty() {
+    gamelength = 5;
+}
+
+// hard difficulty
+const button10 = document.querySelector('Words10');
+
+//assigns logic to button
+button10.addEventListener('click', hardDifficulty);
+
+function hardDifficulty() {
+    gamelength = 20;
+}
+
+
 function printResults(wpm, correct, wrong, percent2) {
     wpm = Math.round(wpm * 100) / 100;
     document.getElementById("wpm").innerHTML = "Speed: "+ wpm+" wpm";
@@ -78,6 +103,8 @@ function printResults(wpm, correct, wrong, percent2) {
 function resetGame() {
     window.location.reload();
 }
+
+
 function generatePhrase() {
 var words = `resistance
 discovery
@@ -2837,9 +2864,9 @@ immigrant
 plaintiff`;
 words = words.split('\n');
 
-var prompt = new Array(10);
+var prompt = new Array(gamelength);
 
-for (let i = 0; i < 10; i++){
+for (let i = 0; i < gamelength; i++){
     //generates a random number between 0 and 2757
     let num = Math.floor(Math.random() * 2757);
     prompt [i] = words[num];
